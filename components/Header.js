@@ -1,10 +1,44 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function Header (){
+const Header = () => {
     return (
-        <View style={{marginTop:50}}>
-          <Text style={{ fontSize: 18, textAlign: 'right', marginRight: 5}}>HOME | SOBRE | CONTATO</Text>
+        <View style={styles.headerContainer}>
+            <View>
+                <Text style={styles.headerLogo}>
+                    Salão da Dani
+                </Text>
+            </View>
+            <View>
+                <Text style={styles.headerOptions}>
+                    HOME | SOBRE | CONTATO
+                </Text>
+            </View>
+
+
         </View>
-      );
+    );
 }
+
+const styles = StyleSheet.create({
+    headerContainer:{
+        // marginTop: 20, 
+        display: 'flex', 
+        flexWrap: 'nowrap',
+        flexDirection: 'row', 
+        alignItems: 'center', 
+        justifyContent: 'space-between',
+    },
+
+    headerLogo:{
+        fontSize: 15, 
+        padding: 10,
+    },
+
+    headerOptions:{
+        fontSize: 15, 
+        textAlign: 'right', 
+        padding: 10
+    }
+})
+export default Header;
